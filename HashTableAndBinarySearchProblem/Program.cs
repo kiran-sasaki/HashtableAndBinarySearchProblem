@@ -25,6 +25,7 @@
             node.Add("16", "paranoid");
             node.Add("17", "avoidable");
             node.Add("18", "situations");
+            node.Remove("17");
             string node0 = node.Get("0");
             Console.WriteLine("0th index value: " + node0);
             string node1 = node.Get("1");
