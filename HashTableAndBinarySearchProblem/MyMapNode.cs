@@ -15,6 +15,26 @@ namespace HashTableAndBinarySearchProblem
             this.size = size;
             this.items = new LinkedList<KeyValue<K, V>>[size];
         }
+        //Remove Method
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition(key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            bool itemFound = false;
+            KeyValue<K, V> foundItem = default(KeyValue<K, V>);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                }
+            }
+            if (itemFound)
+            {
+                linkedList.Remove(foundItem);
+            }
+        }
         //Adding Values Into Hashtable
         public void Add(K key, V value)
         {
